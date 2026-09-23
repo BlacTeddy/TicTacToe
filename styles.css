@@ -1,0 +1,102 @@
+/* ✕◯ */
+*{background-color: wheat;}
+html{scrollbar-width: none;}
+h1{/* display: flex; */
+justify-content: center;
+margin-top: 10%;
+font-size: 4rem;
+}
+h3{margin-bottom: 70px; }
+button{margin-top: 50px;padding: 5px 10px;}
+
+button:hover{ background-color: rgba(210, 173, 52, 0.438);}
+#display{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers items horizontally */
+    align-items: center;     /* Centers items vertically */
+    height: 70vh;           /* Optional: full viewport height for vertical centering */
+    margin: 0 20% ;
+}
+span{   
+    min-width: 100px;
+    /* font-family: monospace; */
+}
+#board{
+    /* background-color: aquamarine; */
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    grid-template-columns: 36.4% 36.4% 36.4% ;
+    grid-template-rows: 33.4% 33.4% 33.4% ;
+    min-height: 300px;
+    min-width: 300px;
+    width: 50%;
+    height: 50%;
+}
+.square{
+    border: 4px solid black;
+    align-items: center;
+    font-size: 35px;
+    /* font-weight: 600; */
+    line-height: 3.5; /* equal to height */
+    user-select: none;
+}
+
+/* Hover effect */
+.square:hover {
+    background-color: rgba(210, 173, 52, 0.17);
+    font-weight: 600;
+}
+#a1{border-top: none;border-left: none;}
+#a2{border-top: none;}
+#a3{border-top: none;border-right: none;}
+#a4{border-left: none;}
+/* #a5{} */ /* not styling the borders */
+#a6{border-right: none;}
+#a7{border-left: none;border-bottom: none;}
+#a8{border-bottom: none;}
+#a9{border-right: none;border-bottom: none;}
+
+.square[data-clicked="true"]{
+    pointer-events: none;
+     /* color:blue; */
+}
+.square[data-played="✕"]{pointer-events: none; color:red; font-weight: 600;}
+.square[data-played="◯"]{pointer-events: none; color:blue; }
+
+#alert{
+    background-color:rgba(0, 0, 0, 0.5);
+    position: fixed;top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    visibility: hidden;
+}
+#alert.active{
+    visibility: visible;
+}
+#box{padding: 15px 15px;
+    background-color: lab(62.74% 1.12 18);
+    border: 6px double rgba(0, 0, 0, 0.497);
+border-radius: 15%;}
+#result {
+    margin: 0;
+    background-color: initial;
+    text-align: center;
+    text-shadow: 
+    0 0 3px rgba(255, 255, 255),
+    0 0 3px rgba(255, 255, 255),
+    0 0 3px rgba(255, 255, 255),
+    0 0 3px rgba(255, 255, 255);
+}
+p, span{
+    background-color: initial;
+    font-weight: 600;
+    text-align: center;
+}
